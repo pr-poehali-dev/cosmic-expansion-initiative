@@ -1,74 +1,74 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Layout, Palette, Code, Share2, Target, Search } from "lucide-react"
+import { Globe, Instagram, Users, Megaphone, Star, FileText } from "lucide-react"
 
-const services = [
+const modules = [
   {
-    icon: Layout,
-    title: "Веб-дизайн",
+    icon: Star,
+    title: "Личный бренд психолога",
     description:
-      "Мы создаем сайты, которые не только визуально привлекательны, но и функциональны, удобны в использовании. В CodeCraft ваш бренд в центре внимания — мы обеспечиваем соответствие онлайн-присутствия целям и ценностям вашего бизнеса.",
+      "Как сформировать уникальное позиционирование, выделиться среди коллег и стать узнаваемым специалистом. Разработка концепции личного бренда и фирменного стиля.",
   },
   {
-    icon: Palette,
-    title: "Графический дизайн",
+    icon: Globe,
+    title: "Сайт и онлайн-присутствие",
     description:
-      "От логотипов до постов в соцсетях — мы создаем креативные графические решения, усиливающие ваш бренд. Наши дизайны уникальны и профессиональны, производя нужное впечатление на целевую аудиторию.",
+      "Создание продающего сайта, наполнение контентом, SEO-оптимизация. Как сделать так, чтобы клиенты находили вас в интернете и записывались на консультацию.",
   },
   {
-    icon: Code,
-    title: "Веб-разработка",
+    icon: Instagram,
+    title: "Продвижение в социальных сетях",
     description:
-      "Мы создаем технически надежные и перспективные сайты. Наша команда обеспечивает надежность, масштабируемость и скорость, помогая вашему бизнесу расти в цифровом пространстве.",
+      "ВКонтакте, Telegram, Instagram — выбор площадок, стратегия контента, оформление профиля. Как вести соцсети, которые приносят реальных клиентов.",
   },
   {
-    icon: Share2,
-    title: "Соцсети",
+    icon: FileText,
+    title: "Контент-маркетинг",
     description:
-      "Сильное присутствие в социальных сетях сегодня решает многое. Мы поможем создать впечатление с помощью привлекательных визуалов и эффективных стратегий, чтобы ваш бренд оставался заметным.",
+      "Создание экспертного контента: статьи, посты, видео, подкасты. Как писать материалы, которые привлекают целевую аудиторию и формируют доверие.",
   },
   {
-    icon: Target,
-    title: "Результат",
+    icon: Megaphone,
+    title: "Платное продвижение и реклама",
     description:
-      "В CodeCraft мы нацелены на успех. Наш подход всегда направлен на достижение измеримых результатов, способствующих росту вашего бизнеса. Вместе находим то, что действительно работает.",
+      "Таргетированная реклама, контекстная реклама, работа с агрегаторами специалистов. Как запустить рекламу с минимальным бюджетом и получить первых клиентов.",
   },
   {
-    icon: Search,
-    title: "SEO",
+    icon: Users,
+    title: "Работа с аудиторией и репутацией",
     description:
-      "Видимость в поиске критически важна. Мы оптимизируем сайт с применением современных SEO-техник, чтобы вы были выше в Google и целевая аудитория легко вас находила.",
+      "Сбор и работа с отзывами, управление репутацией в сети, нетворкинг и партнёрства с коллегами. Как выстроить долгосрочный поток рекомендаций.",
   },
 ]
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section id="program" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 animate-pulse" />
 
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="inline-block mb-4 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mx-auto block w-fit">
-          Наша экспертиза
+          Программа курса
         </div>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 text-balance">
-          В чем мы <span className="text-primary">сильны</span>
+          Что вы <span className="text-primary">изучите</span>
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto text-pretty leading-relaxed text-lg">
-          От концепции до запуска — мы трансформируем ваши цифровые амбиции в мощные онлайн-решения, приносящие результат.
+          6 модулей, охватывающих все современные инструменты продвижения — от создания личного бренда до запуска рекламы и работы с репутацией.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
+          {modules.map((module, index) => (
             <Card
               key={index}
-              className="group hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-2 bg-background/50 backdrop-blur-sm"
+              className="group hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-2 bg-card"
             >
               <CardHeader>
                 <div className="mb-4 inline-flex p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-                  <service.icon className="h-6 w-6" />
+                  <module.icon className="h-6 w-6" />
                 </div>
-                <CardTitle className="text-xl group-hover:text-primary transition-colors">{service.title}</CardTitle>
+                <CardTitle className="text-xl group-hover:text-primary transition-colors">{module.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base leading-relaxed">{service.description}</CardDescription>
+                <CardDescription className="text-base leading-relaxed">{module.description}</CardDescription>
               </CardContent>
             </Card>
           ))}

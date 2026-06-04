@@ -1,20 +1,20 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle2, Sparkles } from "lucide-react"
 
-const values = [
-  { title: "Качество", description: "Высококлассные решения, соответствующие самым высоким стандартам" },
-  { title: "Доступность", description: "Профессиональные сайты по честным и прозрачным ценам" },
-  { title: "Прозрачность", description: "Четкая коммуникация без скрытых платежей" },
-  { title: "Клиентоориентированность", description: "Ваши цели и пожелания всегда в приоритете" },
-  { title: "Масштабируемость", description: "Сайты, которые растут вместе с вашим бизнесом" },
-  { title: "Гибкость", description: "Быстрая адаптация под меняющиеся потребности" },
+const outcomes = [
+  { title: "Личный бренд", description: "Сформируете уникальное позиционирование и запоминающийся образ эксперта" },
+  { title: "Стабильный поток клиентов", description: "Выстроите систему привлечения новых клиентов без постоянных затрат на рекламу" },
+  { title: "Продающий сайт", description: "Создадите или улучшите сайт, который работает на вас 24/7" },
+  { title: "Активные соцсети", description: "Запустите ведение соцсетей с понятной стратегией и контент-планом" },
+  { title: "Навыки рекламы", description: "Научитесь самостоятельно настраивать и запускать рекламные кампании" },
+  { title: "Документ об образовании", description: "Получите удостоверение о повышении квалификации государственного образца" },
 ]
 
 const stats = [
-  { number: "50+", label: "Проектов" },
-  { number: "45+", label: "Довольных клиентов" },
-  { number: "30+", label: "Созданных логотипов" },
-  { number: "3+", label: "Года опыта" },
+  { number: "244", label: "Академических часа" },
+  { number: "2", label: "Месяца обучения" },
+  { number: "100%", label: "Дистанционно" },
+  { number: "1997", label: "Год основания НАДПО" },
 ]
 
 export function AboutSection() {
@@ -27,24 +27,24 @@ export function AboutSection() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
             <Sparkles className="h-4 w-4" />
-            О CodeCraft
+            Что вы получите
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-balance">
-            Качество, которое{" "}
+            Результаты обучения,{" "}
             <span className="text-primary relative">
-              впечатляет
+              которые работают
               <svg className="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 200 8" fill="none">
                 <path d="M0 4C50 2 150 6 200 4" stroke="currentColor" strokeWidth="2" className="text-primary" />
               </svg>
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
-            Создание сайта не должно быть дорогим. Мы разрабатываем индивидуальные решения, которые идеально соответствуют пожеланиям каждого клиента.
+            После курса вы будете знать, как выстраивать профессиональный поток клиентов и развивать практику на системной основе.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {values.map((value, index) => (
+          {outcomes.map((outcome, index) => (
             <Card
               key={index}
               className="border-none shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
@@ -54,9 +54,9 @@ export function AboutSection() {
                   <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" />
                   <div>
                     <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">
-                      {value.title}
+                      {outcome.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{value.description}</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{outcome.description}</p>
                   </div>
                 </div>
               </CardContent>
