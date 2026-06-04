@@ -2,50 +2,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-const pricingTiers = [
-  {
-    name: "Базовый",
-    price: "6 900",
-    description: "Доступ к материалам курса",
-    features: [
-      "Все видеолекции курса",
-      "Учебные материалы и шаблоны",
-      "Тесты и практические задания",
-      "Удостоверение о повышении квалификации",
-      "Доступ к материалам 6 месяцев",
-    ],
-    highlighted: false,
-  },
-  {
-    name: "С куратором",
-    price: "11 900",
-    description: "Курс + личная поддержка",
-    features: [
-      "Всё из тарифа «Базовый»",
-      "Проверка домашних заданий куратором",
-      "Обратная связь по вашей ситуации",
-      "Разбор вашего профиля / сайта",
-      "Доступ к закрытому чату выпускников",
-      "Доступ к материалам 12 месяцев",
-    ],
-    highlighted: true,
-  },
-  {
-    name: "VIP",
-    price: "19 900",
-    description: "Максимальный результат",
-    features: [
-      "Всё из тарифа «С куратором»",
-      "2 индивидуальные сессии с преподавателем",
-      "Персональная стратегия продвижения",
-      "Аудит вашего контента и каналов",
-      "Бессрочный доступ к материалам",
-      "Приоритетная поддержка",
-    ],
-    highlighted: false,
-  },
-]
-
 export function PricingSection() {
   return (
     <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -54,7 +10,7 @@ export function PricingSection() {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-12 space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
             <span className="relative flex h-2 w-2">
@@ -64,60 +20,91 @@ export function PricingSection() {
             Стоимость обучения
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-balance">
-            Выберите <span className="text-primary">подходящий формат</span>
+            Выберите <span className="text-primary">способ оплаты</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Рассрочка без переплат — оплата частями прямо на сайте
+            Рассрочка 0% — без переплат, без первого взноса
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {pricingTiers.map((tier, index) => (
-            <Card
-              key={index}
-              className={`relative group ${
-                tier.highlighted
-                  ? "border-primary shadow-xl scale-105 bg-gradient-to-b from-background to-primary/5"
-                  : "hover:border-primary/50 hover:shadow-lg"
-              } transition-all duration-300`}
-            >
-              {tier.highlighted && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
-                  Популярный
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          {/* Рассрочка */}
+          <Card className="relative hover:border-primary/50 hover:shadow-lg transition-all duration-300">
+            <CardHeader className="text-center pb-4">
+              <CardTitle className="text-2xl mb-1">Рассрочка 0%</CardTitle>
+              <p className="text-sm text-muted-foreground">На 12 месяцев без первого взноса</p>
+              <div className="mt-4">
+                <div className="text-4xl font-bold text-primary">2 067 ₽</div>
+                <div className="text-sm text-muted-foreground mt-1">в месяц · итого 24 800 ₽</div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Все видеолекции и материалы курса",
+                  "Практические задания и шаблоны",
+                  "Удостоверение о повышении квалификации",
+                  "Дистанционный формат, учитесь в своём темпе",
+                  "Оплата частями — без банка и переплат",
+                ].map((f, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm leading-relaxed">{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button className="w-full" variant="outline" asChild>
+                <a href="#contact">Оформить рассрочку</a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Полная оплата */}
+          <Card className="relative border-primary shadow-xl bg-gradient-to-b from-background to-primary/5 transition-all duration-300">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold shadow-lg whitespace-nowrap">
+              Выгоднее · до 5 июня
+            </div>
+            <CardHeader className="text-center pb-4">
+              <CardTitle className="text-2xl mb-1">Полная оплата</CardTitle>
+              <p className="text-sm text-muted-foreground">Дополнительная скидка −5% при оплате на сайте</p>
+              <div className="mt-4">
+                <div className="flex items-baseline justify-center gap-2">
+                  <span className="text-4xl font-bold text-primary">23 560 ₽</span>
                 </div>
-              )}
-              <CardHeader className="text-center pb-6">
-                <CardTitle className="text-2xl mb-1">{tier.name}</CardTitle>
-                <p className="text-sm text-muted-foreground">{tier.description}</p>
-                <div className="mt-4">
-                  <span className="text-4xl font-bold">{tier.price}</span>
-                  <span className="text-lg font-normal text-muted-foreground"> ₽</span>
+                <div className="flex items-center justify-center gap-2 mt-1">
+                  <span className="text-sm text-muted-foreground line-through">36 000 ₽</span>
+                  <span className="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full font-semibold">−31%</span>
                 </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-8">
-                  {tier.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start gap-3 group/item">
-                      <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5 group-hover/item:scale-110 transition-transform" />
-                      <span className="text-sm leading-relaxed">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button
-                  className={`w-full ${tier.highlighted ? "shadow-lg shadow-primary/20" : ""}`}
-                  variant={tier.highlighted ? "default" : "outline"}
-                  asChild
-                >
-                  <a href="#contact">Записаться</a>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+                <div className="text-xs text-muted-foreground mt-1">без скидки — 24 800 ₽</div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Все видеолекции и материалы курса",
+                  "Практические задания и шаблоны",
+                  "Удостоверение о повышении квалификации",
+                  "Дистанционный формат, учитесь в своём темпе",
+                  "Максимальная экономия — скидка 31%",
+                ].map((f, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm leading-relaxed">{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button className="w-full shadow-lg shadow-primary/20" asChild>
+                <a href="#contact">Записаться со скидкой</a>
+              </Button>
+            </CardContent>
+          </Card>
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-10 text-center">
           <p className="text-sm text-muted-foreground">
-            Все тарифы включают <span className="text-primary font-semibold">удостоверение о повышении квалификации</span> государственного образца
+            Все варианты включают{" "}
+            <span className="text-primary font-semibold">удостоверение о повышении квалификации</span>{" "}
+            государственного образца · Программа прошла экспертизу
           </p>
         </div>
       </div>

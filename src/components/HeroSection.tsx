@@ -49,9 +49,14 @@ export function HeroSection() {
       </div>
 
       <div className="container mx-auto text-center max-w-5xl relative z-10">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 animate-fade-in-up">
-          <Sparkles className="w-4 h-4 text-primary" />
-          <span className="text-sm font-medium text-primary">Дистанционное обучение · 244 часа · 2 месяца</span>
+        <div className="flex flex-wrap justify-center gap-3 mb-6 animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground border border-primary font-semibold text-sm">
+            <span className="w-2 h-2 rounded-full bg-primary-foreground animate-pulse" />
+            ИДЁТ НАБОР
+          </div>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium text-primary">
+            Программа прошла экспертизу · 244 часа · 2 месяца
+          </div>
         </div>
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 animate-fade-in-up text-balance">
@@ -101,18 +106,21 @@ export function HeroSection() {
           </Button>
         </div>
 
-        <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-muted-foreground animate-fade-in-up animate-delay-300">
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span>244 часа обучения</span>
+        <div className="flex flex-wrap justify-center items-center gap-6 animate-fade-in-up animate-delay-300">
+          <div className="bg-card border border-border rounded-2xl px-6 py-4 text-center shadow-sm">
+            <div className="text-xs text-muted-foreground mb-1">Рассрочка 0%</div>
+            <div className="text-2xl font-bold text-primary">от 2 067 ₽/мес</div>
+            <div className="text-xs text-muted-foreground mt-1">на 12 мес без первого взноса</div>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ animationDelay: "0.5s" }} />
-            <span>Диплом НАДПО</span>
+          <div className="bg-card border border-border rounded-2xl px-6 py-4 text-center shadow-sm">
+            <div className="text-xs text-muted-foreground mb-1">Полная стоимость</div>
+            <div className="text-2xl font-bold">24 800 ₽</div>
+            <div className="text-xs text-muted-foreground line-through mt-1">36 000 ₽</div>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ animationDelay: "1s" }} />
-            <span>Дистанционный формат</span>
+          <div className="bg-primary/10 border border-primary/30 rounded-2xl px-6 py-4 text-center shadow-sm">
+            <div className="text-xs text-primary font-semibold mb-1">При оплате на сайте</div>
+            <div className="text-2xl font-bold text-primary">23 560 ₽</div>
+            <div className="text-xs text-primary mt-1">доп. скидка −5% · до 5.06</div>
           </div>
         </div>
       </div>
